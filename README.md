@@ -1,4 +1,4 @@
-# Simple substition cipher solver
+# Simple substitution cipher solver
 
 For course algorithms and AI lab.
 
