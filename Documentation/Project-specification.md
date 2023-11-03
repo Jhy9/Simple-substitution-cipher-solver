@@ -1,7 +1,7 @@
 # Project specification
 
 ## Project
-Project is an algorithm that solves substitution ciphers where each letter is substitute for different letter. Words are solved by comparing frequencies of letters in ciphered text to frequencies of letters appearing in dictionary and making educated guesses on how letters are substituted. Algorithm performs searches on dictionary that is stored in a [trie](https://en.wikipedia.org/wiki/Trie) to confirm whether or not formed words are actual words.
+Project is an algorithm that solves substitution ciphers where each letter is substitute for different letter. Words are solved by comparing frequencies of letters appearing in ciphered text to frequencies of letters appearing in dictionary and making educated guesses on how letters are substituted. Algorithm performs searches on dictionary that is stored in a [trie](https://en.wikipedia.org/wiki/Trie) to confirm whether or not formed words are actual words.
 
 ## Inputs
 Program will take ciphered texts with some restrictions on original unciphered text. 
