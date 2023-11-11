@@ -10,3 +10,6 @@ I think it is very likely that storing children nodes in arraylist will not be o
 Will later on change the implementation to use arrays which should greatly improve speed at the cost of some extra space.
 
 Time used: around 7 hours
+
+## What is next?
+For next week I will try to get first version of program to executable state. Will also need to write tests for the program.
