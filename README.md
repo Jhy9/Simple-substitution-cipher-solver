@@ -11,3 +11,5 @@ At the current moment, program hasn't been tested and it very likely has errors 
 [Weekly reports](Documentation/Weekly-reports)
 
 [Project specification](Documentation/Project-specification.md)
+
+[Design document](Documentation/Design-document.md)
