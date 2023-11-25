@@ -10,7 +10,7 @@ Therefore we get a starting point by calculating letter frequencies of both the 
 as most common letter in dictionary and so on.
 
 ### 2. Make adjustments to translating array
-<b> Assumption: Letter distribution of ciphered text is similar to dictionary . Therefore right answer is got by changing around letters frequency of which is close to each other. </b>
+<b> Assumption: Letter distribution of ciphered text is similar to dictionary . Therefore right answer is got by changing around the letters frequency of which is close to each other. </b>
 
 Algorithm does changes in cycles followingly:
 1. Pick n(undecided) random words from cipher. Words are picked randomly so that and we still get a good representation of the text in a long run while not having to translate it entirely in each cycle.
