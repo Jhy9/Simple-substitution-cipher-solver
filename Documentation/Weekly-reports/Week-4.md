@@ -12,8 +12,8 @@ Goals for the next week are:
 
 1. Fix the program to a working state and add relevant commenting to code
 2. Add unit tests to relevant classes and methods
-3. Begin testing the problem solving ability and adjust program if needed
-4. Complete design documentation on implementatiton
+3. Begin testing the algorithm's problem solving ability and adjust it if needed
+4. Complete design documentation on implementation
 
 
 ### Time used: around 13 hours
