@@ -2,7 +2,7 @@
 
 ## READ THIS:
 
-At the current moment, program hasn't been tested and it very likely has errors which make it not executable. This will be fixed early next week.
+Program should be functional now.
 
 
 
