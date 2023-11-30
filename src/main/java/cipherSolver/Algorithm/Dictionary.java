@@ -3,6 +3,7 @@ package cipherSolver.Algorithm;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Dictionary{
     private Node head;
@@ -12,7 +13,7 @@ public class Dictionary{
         this.head = new Node();
         this.frequencies = new Frequency[26];
         for(int i = 0; i < 26;i++){
-            this.frequencies[i] = new Frequency('a'+i);
+            this.frequencies[i] = new Frequency((char)((int)'a'+i));
         }
         addDictionary();
     }
@@ -26,7 +27,7 @@ public class Dictionary{
                     char x = nextWord.charAt(i);
                     this.frequencies[(int)x - 97].increment();
                 }
-                this.head.addWord(nextWord, 0);
+                this.head.addWord(nextWord, -1);
             }
             Arrays.sort(this.frequencies);
             dictReader.close();
@@ -35,22 +36,20 @@ public class Dictionary{
         }
     }
 
-    public double wordChecker(ArrayList<String> words, char[] translator){
+    public int wordChecker(ArrayList<String> words, char[] translator){
         int correctWords = 0;
-        int checked = 0;
         for(String word:words){
             StringBuilder sb = new StringBuilder();
             for(int i = 0; i < word.length();i++){
                 char x = word.charAt(i);
-                x = translator[(int)(x-'a')];
+                x = translator[x-'a'];
                 sb.append(x);
             }
-            if(this.head.searchForWord(sb.toString(), 0) == true){
+            if(this.head.searchForWord(sb.toString(), -1) == true){
                 correctWords++;
             }
-            checked++;
         }
-        return (correctWords/checked);
+        return correctWords;
     }
 
     public Frequency[] getFrequencies(){
@@ -59,7 +58,10 @@ public class Dictionary{
 
     public void printFrequencies(){
         for(int i = 0; i < this.frequencies.length;i++){
-            System.out.println((char)(i+97) +": "+ this.frequencies[i]);
+            System.out.println(this.frequencies[i].getLetter() +": "+ this.frequencies[i].getCount());
         }
+    }
+    public Node getHead(){
+        return this.head;
     }
 }

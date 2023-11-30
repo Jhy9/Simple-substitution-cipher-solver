@@ -14,16 +14,13 @@ public class Node{
         if(index +1 == word.length()){
             this.endpoint = true;
         } else{
-            int nextLetter =(int)word.charAt(index+1)-97;
-            boolean nodeExisted = false;
+            int nextLetter =word.charAt(index+1)-'a';
             Node next = null;
-            if(children[nextLetter] != null){
-                next = children[nextLetter];
-                nodeExisted = true;
-            }
-            if(nodeExisted == false){
+            if(this.children[nextLetter] != null){
+                next = this.children[nextLetter];
+            } else{
                 next = new Node();
-                this.children[(int)nextLetter] = next;
+                this.children[nextLetter] = next;
             }
             next.addWord(word,index+1);
         }
@@ -33,12 +30,12 @@ public class Node{
         if(index+1 == word.length()){
             return this.endpoint;
         } else{
-            int nextLetter = (int)word.charAt(index+1)-97;
+            int nextLetter =word.charAt(index+1)-'a';
             Node next = this.children[nextLetter];
             if (next == null){
                 return false;
             } else{
-                return searchForWord(word,index+1);
+                return next.searchForWord(word,index+1);
             }
         }
     }

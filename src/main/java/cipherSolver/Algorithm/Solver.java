@@ -3,109 +3,96 @@ package cipherSolver.Algorithm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.random;
+import java.util.Random;
 import java.util.HashSet;
 
 public class Solver{
-    private Frequency[] cipherFrequencies;
     private Dictionary dictionary;
     private char[] simpleFreqs;
+
     public Solver(){
         this.dictionary = new Dictionary();
     }
 
-    private void initCipher(ArrayList<String> words){
-        this.cipherFrequencies = new Frequency[26];
+    private char[] initSolver(ArrayList<String> words){
+        char[] translator = new char[26];
+        Frequency[] dictFreq = this.dictionary.getFrequencies();
+        Frequency[] cipherFrequencies = new Frequency[26];
         for(int i = 0; i < 26;i++){
-            this.cipherFrequencies[i] = new Frequency('a'+i);
+            cipherFrequencies[i] = new Frequency((char)((int)'a'+i));
         }
         for(String s:words){
-            String trimmedWord = textSimplifier(s);
-            for(int i = 0; i < trimmedWord.length();i++){
-                char x = trimmedWord.charAt(i);
-                this.cipherFrequencies[(int)x -97].increment();
+            for(int i = 0; i < s.length();i++){
+                char x = s.charAt(i);
+                cipherFrequencies[(int)x -97].increment();
             }
         }
-        Arrays.sort(this.cipherFrequencies);
+        Arrays.sort(cipherFrequencies);
         this.simpleFreqs = new char[26];
         for(int i = 0; i < 26;i++){
-            this.simpleFreqs[i] = this.cipherFrequencies[i].getLetter();
+            this.simpleFreqs[i] = cipherFrequencies[i].getLetter();
+            translator[this.simpleFreqs[i]-'a'] = dictFreq[i].getLetter();
         }
+        return translator;
     }
 
     public char[] solve(ArrayList<String> words, int maxRounds){
-        char[] translator = initial();
-        initCipher(words);
-        Random r = new Random();
+        char[] translator = initSolver(words);
+        int pickAmount = 0;
+        if(words.size() > 50){
+            pickAmount = 30;
+        } else{
+            pickAmount = words.size();
+        }
+        ArrayList<String> chosenWords = words;
         for(int round = 0; round < maxRounds;round++){
-            HashSet<Integer> chosenWordIndexes = new HashSet();
-            ArrayList<String> chosenWords = new ArrayList();
-            if(words.size() > 50){
-                while(chosenWordIndexes.size() < 30){
-                    chosenWordIndexes.add(r.nextInt(words.size()));
-                }
-                for(int i: chosenWordIndexes){
-                    chosenWords.add(words.get(i));
-                }
-            } else{
-                chosenWords = words;
+            if(pickAmount < words.size()){
+                chosenWords = pickWords(words,pickAmount);
             }
-
-            double comparison = this.dictionary.wordChecker(chosenWords, translator);
-            if (comparison > 0.95){ // At this point cipher is considered to be solved
-                break;
-            }
-            bool nextRound = false;
-            for(int difference = 1; difference <= 3; difference++){
+            int comparison = this.dictionary.wordChecker(chosenWords, translator);
+            
+            boolean foundBetter = false;
+            for(int difference = 1; difference <= 8; difference++){
                 // Switch 2 letters places in translation, if result is better than current best, keep change and move on to next round. 
                 //Otherwise revert change and continue
                 for(int i = 0; (i+difference)< 26;i++){
-                    char temp = simpleFreqs[i];
-                    simpleFreqs[i] = simpleFreqs[i+difference];
-                    simpleFreqs[i+difference] = temp;
-                    char temp2 = translator[(int)(simpleFreqs[i]-'a')];
-                    translator[(int)(simpleFreqs[i]-'a')] = translator[(int)(simpleFreqs[i+difference]-'a')];
-                    translator[(int)(simpleFreqs[i+difference]-'a')] = temp2;
-                    double test = this.dictionary.wordChecker(chosenWords, translator);
-                    if(test > comparison){
-                        nextRound = true;
-                        break;
+                    translator = swapper(translator,this.simpleFreqs[i]-'a',this.simpleFreqs[i+difference]-'a');
+                    int test = this.dictionary.wordChecker(chosenWords, translator);
+                    if(test <= comparison){
+                        translator = swapper(translator,this.simpleFreqs[i]-'a',this.simpleFreqs[i+difference]-'a');
                     } else{
-                        temp = simpleFreqs[i];
-                        simpleFreqs[i] = simpleFreqs[i+difference];
-                        simpleFreqs[i+difference] = temp;
-                        temp2 = translator[(int)(simpleFreqs[i]-'a')];
-                        translator[(int)(simpleFreqs[i]-'a')] = translator[(int)(simpleFreqs[i+difference]-'a')];
-                        translator[(int)(simpleFreqs[i+difference]-'a')] = temp2;
+                        this.simpleFreqs = swapper(this.simpleFreqs,i,i+difference);
+                        foundBetter = true;
+                        break;
                     }
                 }
-                if(nextRound == true){
+                if(foundBetter == true){
                     break;
                 }
             }
         }
+        System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
         return translator;
     }
 
-    private char[] initial(){
-        char[] translator = new char[26];
-        Frequency[] dictFreq = this.dictionary.getFrequencies();
-        for(int i = 0; i < 26;i++){
-            translator[(int)(dictFreq[i].getLetter()-'a')] = this.cipherFrequencies[i].getLetter();
-        }
-        return translator;
+    private char[] swapper(char[] swapObj, int first, int second){
+        char[] array = swapObj;
+        char temp = array[first];
+        array[first] = array[second];
+        array[second] = temp; 
+        return array;
     }
 
-    private String textSimplifier(String s){
-        StringBuilder simplified = new StringBuilder();
-        String sLower = s.toLowerCase();
-        for (int i = 0; i < sLower.length();i++){
-            char character = sLower.charAt(i);
-            if((int)character >= 97 && (int)character < 123){
-                simplified.append(character);
-            }
+    private ArrayList<String> pickWords(ArrayList<String> wordList, int amount){  
+        HashSet<Integer> chosenWordIndexes = new HashSet();
+        ArrayList<String> chosenWords = new ArrayList();
+        Random r = new Random();
+        while(chosenWordIndexes.size() < amount){
+            chosenWordIndexes.add(r.nextInt(wordList.size()-1));
         }
-        return simplified.toString();
+        for(int x: chosenWordIndexes){
+            chosenWords.add(wordList.get(x));
+        }
+        return chosenWords;
     }
-    
 }

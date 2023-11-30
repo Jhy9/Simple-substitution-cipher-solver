@@ -7,11 +7,11 @@ import org.junit.Test;
 
 public class NodeTest 
 {
-    private Node head;
 
+    private Node head;
     @Before
     public void init(){
-        this.head = new Node();
+        head = new Node();
     }
 
     @Test
@@ -19,16 +19,17 @@ public class NodeTest
     {
         assertFalse(this.head.searchForWord("a",-1));
     }
-    /* 
+
     @Test
     public void treeAdditionsCanBeFound()
     {
-        this.head.addWord("test",0);
+        this.head.addWord("test",-1);
         assertTrue(this.head.searchForWord("test",-1));
     }
-    */
+ 
     @Test
     public void wordSubStringsArentCountedAsWords(){
+        this.head.addWord("test",-1);
         assertFalse(this.head.searchForWord("te",-1));
     }
 

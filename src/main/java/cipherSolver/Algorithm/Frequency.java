@@ -17,13 +17,15 @@ public class Frequency implements Comparable<Frequency>{
     public char getLetter(){
         return this.letter;
     }
-    
+    public int getCount(){
+        return this.count;
+    }
     @Override 
     public int compareTo(Frequency x){
         if(this.count > x.count){
-            return 1;
-        } else if (this.count < x.count){
             return -1;
+        } else if (this.count < x.count){
+            return 1;
         } else{
             return 0;
         }

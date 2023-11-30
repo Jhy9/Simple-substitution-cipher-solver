@@ -2,38 +2,37 @@ package cipherSolver.IOUtil;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-
-class IOservice{
-    private String filename;
-
-    public IOservice(String filename){
-        this.filename = filename;
-    }
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+public class IOservice{
     
-    public ArrayList<String> readFile(String name){
+    public ArrayList<String> readFile(String filename){
         try{
-            String path = "Input/"+this.filename+".txt";
-            Scanner fileReader = new Scanner(this.getClass().getResourceAsStream(path));
+            Scanner fileReader = new Scanner(this.getClass().getResourceAsStream("/Input/"+filename));
             ArrayList<String> wordsInFile = new ArrayList();
             while(fileReader.hasNextLine()){
                 String line = fileReader.nextLine();
                 String[] wordsLine = line.split(" ");
                 for(String word:wordsLine){
-                    wordsInFile.add(word);
+                    String simplified = textSimplifier(word);
+                    if(simplified.length() > 0){
+                        wordsInFile.add(simplified);
+                    }
                 }
             }
             fileReader.close();
             return wordsInFile;
         } catch (Exception e){
-            System.out.println(e);
+            System.out.println(e.toString());
             return null;
         }
     }
 
-    public void solutionWriter(char[] solution){
-        try{
-            Scanner reader = new Scanner(this.getClass().getResourceAsStream("Input/"+this.filename+".txt"));
-            BufferedWriter writer = new BufferedWriter("Output/" + this.filename +".txt",false);
+    public void solutionWriter(char[] solution, String filename){
+        try{     
+            Scanner reader = new Scanner(this.getClass().getResourceAsStream("/Input/"+filename));
+            FileWriter fileWriter = new FileWriter("src/main/resources/Output/"+filename,false);
+            BufferedWriter writer = new BufferedWriter(fileWriter);
             while(reader.hasNextLine()){
                 String line = reader.nextLine();
                 StringBuilder sb = new StringBuilder();
@@ -41,21 +40,32 @@ class IOservice{
                     char x = line.charAt(i);
                     int ascii = (int) x;
                     if(ascii >= 65 && ascii <= 90){
-                        x = x+(solution[ascii-(int)'A']-ascii);
+                        x = (char)(solution[ascii-(int)'A']-32);
                     }
                     if(ascii >= 97 && ascii <= 122){
-                        x = x+(solution[ascii-(int)'a']-ascii);
+                        x = (char)(solution[ascii-(int)'a']);
                     }
                     sb.append(x);
                 }
                 writer.write(sb.toString());
                 writer.newLine();
+            }
+            writer.close();
+            reader.close();
+        }catch(Exception e){
+            System.out.println(e.toString());
         }
-    }catch(Exception e){
-        print(e);
-    }
     }
 
-
-
+    private String textSimplifier(String s){
+        StringBuilder simplified = new StringBuilder();
+        String sLower = s.toLowerCase();
+        for (int i = 0; i < sLower.length();i++){
+            char character = sLower.charAt(i);
+            if((int)character >= 97 && (int)character < 123){
+                simplified.append(character);
+            }
+        }
+        return simplified.toString();
+    }
 }
