@@ -19,9 +19,9 @@ public class App{
 
     private static void solveTestFile(String filename){
         CipherGenerator generator = new CipherGenerator();
+        generator.createCipher(filename);
         IOservice io = new IOservice();
         Solver solver = new Solver();
-        generator.createCipher(filename);
         ArrayList<String> words = io.readFile(filename);
         char[] solution = solver.solve(words, 100000);
         io.solutionWriter(solution,filename);
