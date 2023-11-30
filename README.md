@@ -2,7 +2,7 @@
 
 ## READ THIS:
 
-Program should be functional now. The program does not currently have any UI (likely added tomorrow).
+Program should be functional now. The program does not currently have any UI.
 
 ## Quick user instructions
 1. Download and open folder in terminal 
