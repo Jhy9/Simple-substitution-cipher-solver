@@ -4,6 +4,9 @@
 
 Program should be functional now. The program does not currently have any UI.
 
+Adding own texts for testing may cause following error: "Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.iterator()" because "words" is null".
+If this happens, rebuild program with command "mvn package" and then try again.
+
 ## Quick user instructions
 1. Download and open folder in terminal 
 2. (Optional) to add own texts for testing:
@@ -14,7 +17,7 @@ Program should be functional now. The program does not currently have any UI.
    - (You can modify amount of rounds algorithm does by changing the number on line "char[] solution = ..." in solveTestFile method)
    - After program has run it's course ciphered version of your text file can be found in folder "src/main/resources/Input" and
      solved version of that cipher in folder "src/main/resources/Output"
-3. Enter command "mvn build" to build project (do this after every time you modify anything)(requires maven, does work on uni computers/vdi)
+3. Enter command "mvn package" to build project (do this after every time you modify anything)(requires maven, does work on uni computers/vdi)
 4. To launch program enter command "java -cp target/Simple-substitution-cipher-solver-1.0-SNAPSHOT.jar cipherSolver.App" (program will take some time to complete)
 
 (The program results do seem to vary so running it a few time may give slightly different results)
