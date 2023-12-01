@@ -4,7 +4,7 @@
 
 Program should be functional now. The program does not currently have any UI.
 
-Adding own texts for testing may cause following error: "Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.iterator()" because "words" is null".
+Testing may cause following error: "Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.iterator()" because "words" is null".
 If this happens, rebuild program with command "mvn package" and then try again.
 
 ## Quick user instructions
