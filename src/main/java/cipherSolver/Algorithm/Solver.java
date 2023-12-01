@@ -39,25 +39,32 @@ public class Solver{
     public char[] solve(ArrayList<String> words, int maxRounds){
         char[] translator = initSolver(words);
         int pickAmount = 0;
-        if(words.size() > 50){
-            pickAmount = 30;
+        long wordSearches = 0;
+        if(words.size() > 25){
+            pickAmount = 20;
         } else{
             pickAmount = words.size();
         }
         ArrayList<String> chosenWords = words;
         for(int round = 0; round < maxRounds;round++){
             if(pickAmount < words.size()){
-                chosenWords = pickWords(words,pickAmount);
+                chosenWords = pickWords(words,pickAmount, 1);
             }
             int comparison = this.dictionary.wordChecker(chosenWords, translator);
-            
+            if (comparison == pickAmount){
+                if((double)this.dictionary.wordChecker(words, translator) / (double)words.size() > 0.98){
+                    wordSearches += words.size();
+                    break;
+                }
+            }
             boolean foundBetter = false;
-            for(int difference = 1; difference <= 8; difference++){
+            for(int difference = 1; difference <= 10; difference++){
                 // Switch 2 letters places in translation, if result is better than current best, keep change and move on to next round. 
                 //Otherwise revert change and continue
                 for(int i = 0; (i+difference)< 26;i++){
                     translator = swapper(translator,this.simpleFreqs[i]-'a',this.simpleFreqs[i+difference]-'a');
                     int test = this.dictionary.wordChecker(chosenWords, translator);
+                    wordSearches += pickAmount;
                     if(test <= comparison){
                         translator = swapper(translator,this.simpleFreqs[i]-'a',this.simpleFreqs[i+difference]-'a');
                     } else{
@@ -71,6 +78,7 @@ public class Solver{
                 }
             }
         }
+        System.out.println("Almorithm performed " + wordSearches + " word searches from dictionary.");
         System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
         return translator;
     }
@@ -83,16 +91,25 @@ public class Solver{
         return array;
     }
 
-    private ArrayList<String> pickWords(ArrayList<String> wordList, int amount){  
+    private ArrayList<String> pickWords(ArrayList<String> wordList, int amount, int style){  
         HashSet<Integer> chosenWordIndexes = new HashSet();
         ArrayList<String> chosenWords = new ArrayList();
-        Random r = new Random();
-        while(chosenWordIndexes.size() < amount){
-            chosenWordIndexes.add(r.nextInt(wordList.size()-1));
+        if (style == 0){
+            // Picks words from beginning of text (performs much worse)
+            for(int i = 0; i < amount;i++){
+                chosenWords.add(wordList.get(i));
+            }
+        } else{
+            //Picks random words
+            Random r = new Random();
+            while(chosenWordIndexes.size() < amount){
+                chosenWordIndexes.add(r.nextInt(wordList.size()-1));
+            }
+            for(int x: chosenWordIndexes){
+                chosenWords.add(wordList.get(x));
+            }
         }
-        for(int x: chosenWordIndexes){
-            chosenWords.add(wordList.get(x));
-        }
+        
         return chosenWords;
     }
 }

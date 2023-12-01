@@ -47,7 +47,7 @@ public class CipherGenerator{
         int a = 0;
         int b = 0;
         char temp = 'a';
-        for(int i = 0; i < 500; i++){
+        for(int i = 0; i < 1000; i++){
             a = r.nextInt(26);
             b = r.nextInt(26);
             temp = letterOrder[a];

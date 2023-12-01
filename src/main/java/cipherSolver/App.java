@@ -23,7 +23,7 @@ public class App{
         IOservice io = new IOservice();
         Solver solver = new Solver();
         ArrayList<String> words = io.readFile(filename);
-        char[] solution = solver.solve(words, 100000);
+        char[] solution = solver.solve(words, 10000);
         io.solutionWriter(solution,filename);
     }
 }
