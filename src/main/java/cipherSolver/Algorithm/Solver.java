@@ -78,7 +78,8 @@ public class Solver{
                 }
             }
         }
-        System.out.println("Almorithm performed " + wordSearches + " word searches from dictionary.");
+        System.out.println("Solver results: ");
+        System.out.println("Algorithm performed " + wordSearches + " word searches from dictionary.");
         System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
         return translator;
     }
