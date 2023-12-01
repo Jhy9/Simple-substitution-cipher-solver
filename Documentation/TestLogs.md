@@ -1,7 +1,23 @@
+# Test logs
+For each textfile I ran 10 concecutive testruns and marked down results. 
+
+Analysis and discussion can be found here (link coming soon).
 
 
-File: testfile.txt  Word count:98 Perfect result : 97 found
+## Fields
+ - Word search count: How many times algorithm performed a dictionary search for a word.
 
+ - Time used: How many ms algorithm took to perform task (read cipher+run solver+write solution)
+
+ - Found words: How many of the words in final answer can be found from used dictionary. (Some words can't be found there)
+
+ - S/F: Does final result match the original file.
+
+## Tests
+
+File: testfile.txt  Word count:98 Perfect result : 97 
+
+Text type: First paragraph of Wikipedia article
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   | 957 458  | 594  | 97  | Success  |
@@ -17,6 +33,9 @@ File: testfile.txt  Word count:98 Perfect result : 97 found
 
 
 File: testfile2.txt Word count: 186 Perfect result: 179
+
+Text type: Satirical news article
+
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   | 2 284 772  | 868  | 179  | Success  |
@@ -31,6 +50,9 @@ File: testfile2.txt Word count: 186 Perfect result: 179
 | 10  | 2 886 468  | 499  | 179  | Success  |
 
 File: testfile3.txt Word count: 545 Perfect result: 530
+
+Text type: Opinion piece about football
+
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   | 4 183 320  | 950  | 530  | Success  |
@@ -45,6 +67,9 @@ File: testfile3.txt Word count: 545 Perfect result: 530
 | 10  | 4 901 240  | 649  | 177  | Failure  |
 
 File: testfile4.txt Word count: 54 Perfect result: 53
+
+Text type: Small part of a wikipedia article
+
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   |33 549 440  | 2800  | 32  | Failure  |
@@ -59,6 +84,8 @@ File: testfile4.txt Word count: 54 Perfect result: 53
 | 10  | 36 409 560  | 2599  | 29  | Failure  |
 
 File: testfile5.txt Word count: 30 Perfect result: 30
+Text type: Even smaller part of a wikipedia article
+
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   |40 926 320  | 2953  | 18  | Failure  |
@@ -73,6 +100,9 @@ File: testfile5.txt Word count: 30 Perfect result: 30
 | 10  | 39 837 220  | 2521  | 18  | Failure  |
 
 File: testfile6.txt Word count: 976 Perfect result: 964
+
+Type: Wikihow article
+
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   |201 960 | 554  | 964  | Success  |
@@ -87,6 +117,9 @@ File: testfile6.txt Word count: 976 Perfect result: 964
 | 10  | 1 158 492  | 375  | 964  |Success  |
 
 File: testfile8.txt Word count: 249 Perfect result: 228
+
+Type: CS match report
+
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   |3 878 498 | 848  | 228  | Success  |
@@ -101,6 +134,9 @@ File: testfile8.txt Word count: 249 Perfect result: 228
 | 10  | 2 599 489  | 460  | 228  |Success  |
 
 File: testfile9.txt Word count: 148 Perfect result: 142
+
+Type: Meatball recipe
+
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   |479 528 | 548  | 142  | Success  |
@@ -115,6 +151,9 @@ File: testfile9.txt Word count: 148 Perfect result: 142
 | 10  | 4 763 880  | 636  | 38  |Success  |
 
 File: lotr.txt Word count: 195 273 Perfect result: 188 589
+
+Type: Book: Lord of the rings: the fellowship of the ring
+
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   |1 038 753 | 513  | 188 589  | Success  |
