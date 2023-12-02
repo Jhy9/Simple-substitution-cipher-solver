@@ -51,9 +51,10 @@ public class Solver{
                 chosenWords = pickWords(words,pickAmount, 1);
             }
             int comparison = this.dictionary.wordChecker(chosenWords, translator);
+            wordSearches += pickAmount; // forgot to add this for tests(see test discussion from documentation)
             if (comparison == pickAmount){
-                if((double)this.dictionary.wordChecker(words, translator) / (double)words.size() > 0.98){
-                    wordSearches += words.size();
+                wordSearches += words.size();
+                if((double)this.dictionary.wordChecker(words, translator) / (double)words.size() > 0.95){
                     break;
                 }
             }
