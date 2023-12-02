@@ -5,7 +5,8 @@ Analysis and discussion can be found here (link coming soon).
 
 
 ## Fields
- - Word search count: How many times algorithm performed a dictionary search for a word.
+ - Word search count: How many times algorithm performed a dictionary search for a word.*
+    - I forgot to add one line command to increase word coun(now added and marked with a comment in class Solver). However amount of these uncounted searches is        quite small compared to overall searches. I'd approximate that these missed searches make around 5-15% of total searches depending on test case (potentially less on successful runs). They also have a cap of 200 000.
 
  - Time used: How many ms algorithm took to perform task (read cipher+run solver+write solution)
 
