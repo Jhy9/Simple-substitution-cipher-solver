@@ -6,7 +6,6 @@ Analysis and discussion can be found here (link coming soon).
 
 ## Fields
  - Word search count: How many times algorithm performed a dictionary search for a word.*
-    - I forgot to add one command to increase word count(now added and marked with a comment in class Solver). However amount of these uncounted searches is        quite small compared to overall searches. I'd approximate that these missed searches make around 5-15% of total searches depending on test case (potentially less on successful runs). They also have a cap of 200 000.
 
  - Time used: How many ms algorithm took to perform task (read cipher+run solver+write solution)
 
@@ -24,16 +23,16 @@ Word count:98 Perfect result : 97
 Text type: First paragraph of Wikipedia article
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   | 957 458  | 594  | 97  | Success  |
-| 2  | 37 936 374  | 2906  | 88  | Failure |
-| 3  | 1 989 070  | 468  | 97  |Success  |
-| 4  | 1 943 588  | 438  | 97  |Success  |
-| 5  | 1 055 130  | 316  | 97  |Success  |
-| 6   | 6 634 208  | 877  | 97  |Success  |
-| 7  | 19 510 896  | 1491  | 97  | Success  |
-| 8  | 36 359 756  | 2598  | 88  |Failure  |
-| 9  | 15 425 612  | 1286  | 97  |Success  |
-| 10  | 5 325 208  | 623  | 97  | Success  |
+| 1   | 18 898 332  | 2118  | 97  | Success  |
+| 2  | 8 847 132  | 1069  | 97  | Success |
+| 3  | 21 317 196  | 1671  | 97  |Success  |
+| 4  | 3 974 350  | 491  | 97  |Success  |
+| 5  | 3 279 694  | 425  | 97  |Success  |
+| 6   | 21 303 420  | 1556  | 48  |Failure  |
+| 7  | 120 706  | 268  | 97  | Success  |
+| 8  | 677 282  | 304  | 97  |Success  |
+| 9  | 5 427 770  | 608  | 97  |Success  |
+| 10  | 16 575 514  | 1370  | 97  | Success  |
 
 ### Test 2
 File: [testfile2.txt](../src/main/resources/TextsForTesting/testfile2.txt)  
@@ -44,16 +43,16 @@ Text type: Satirical news article
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   | 2 284 772  | 868  | 179  | Success  |
-| 2  | 1 664 046  | 587  | 179  | Success  |
-| 3  |578 326  | 311  | 179  |Success  |
-| 4  | 1 736 646  | 560  |179  |Success  |
-| 5  | 4 679 600  | 861  | 58  |Failure  |
-| 6   |2 514 924  | 501  | 179 |Success  |
-| 7  | 3 922 806  | 756  | 179  | Success  |
-| 8  | 635 588  | 308  | 179  |Success  |
-| 9  | 2 394 266  | 450  | 179  |Success  |
-| 10  | 2 886 468  | 499  | 179  | Success  |
+| 1   | 138 878  | 491  | 179  | Success  |
+| 2  | 4 476 946  | 742  | 179  | Success  |
+| 3  | 2 808 982  | 544  | 179  |Success  |
+| 4  | 693 922  | 326  |179  |Success  |
+| 5  | 1 415 128  | 330  | 179  |Success  |
+| 6   | 5 322 780  | 604  | 60 |Failure  |
+| 7  | 1 033 650  | 369  | 179  | Success  |
+| 8  | 4 925 526  | 588  | 179  |Success  |
+| 9  | 575 686  | 316  | 179  |Success  |
+| 10  | 1 336 912  | 325  | 179  | Success  |
 
 ### Test 3
 File:[testfile3.txt](../src/main/resources/TextsForTesting/testfile3.txt)  
@@ -64,16 +63,16 @@ Text type: Opinion piece about football
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   | 4 183 320  | 950  | 530  | Success  |
-| 2  | 5 176 980  | 791  | 162  | Failure  |
-| 3  |937 655  | 314  | 530  |Success  |
-| 4  | 992 410  | 369  |530  |Success  |
-| 5  | 736 165  | 404  | 530  |Success  |
-| 6   | 1 737 995  | 351  | 530 |Success  |
-| 7  | 832 320  | 267  | 530  | Success  |
-| 8  | 611 805  | 247  | 530  |Success  |
-| 9  | 3 957 950  | 542  | 530  |Success  |
-| 10  | 4 901 240  | 649  | 177  | Failure  |
+| 1   | 1 073 565  | 460  | 530  | Success  |
+| 2  | 616 015  | 324  | 530  | Success  |
+| 3  |4 771 840  | 721  | 137  |Failure  |
+| 4  | 4 466 525  | 647  |530  |Success  |
+| 5  | 1 095 875  | 364  | 530  |Success  |
+| 6   | 3 643 675  | 560  | 530 |Success  |
+| 7  | 279 200  | 268  | 530  | Success  |
+| 8  | 4 362 120  | 591  | 530  |Success  |
+| 9  | 4 709 960  | 778  | 164  |Failure  |
+| 10  | 2 816 445  | 438  | 530  | Success  |
 ### Test 4
 File: [testfile4.txt](../src/main/resources/TextsForTesting/testfile4.txt)  
 
@@ -83,16 +82,16 @@ Text type: Small part of a wikipedia article
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   |33 549 440  | 2800  | 32  | Failure  |
-| 2  | 1 732 254  | 349  | 53  | Success  |
-| 3  |40 058 360  | 2726  | 25  |Failure  |
-| 4  | 37 347 160  | 2766  |29  |Failure  |
-| 5  | 36 910 374  | 2857  | 49  |Failure  |
-| 6   | 37 330 060  | 2470  | 27 |Failure  |
-| 7  | 35 703 382  | 2881  | 45  | Failure  |
-| 8  | 40 076 800  | 2691  | 28  |Failure  |
-| 9  | 8 890 834  | 851  | 53  |Success  |
-| 10  | 36 409 560  | 2599  | 29  | Failure  |
+| 1   |40 303 440  | 3116  | 30  | Failure  |
+| 2  | 40 125 780  | 2682  | 24  | Failure  |
+| 3  |36 337 440  | 2460  | 32  |Failure  |
+| 4  | 40 535 000  | 2892  |30  |Failure  |
+| 5  | 21 455 074  | 1712  |53  |Success  |
+| 6   | 40 153 380  | 2536  | 24 |Failure  |
+| 7  | 1 005 654  | 241  | 53  | Success  |
+| 8  | 1 949 708  | 301  | 53  |Success  |
+| 9  | 37 886 560  | 2533  | 31  |Failure  |
+| 10  | 40 119 180  | 2589  | 26  | Failure  |
 ### Test 5
 File: [testfile5.txt](../src/main/resources/TextsForTesting/testfile5.txt)  
 
@@ -102,16 +101,16 @@ Text type: Even smaller part of a wikipedia article
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   |40 926 320  | 2953  | 18  | Failure  |
-| 2  | 40 868 280  | 2585  | 18  | Failure  |
-| 3  |40 130 700  | 2758  | 20  |Failure  |
-| 4  | 40 606 340  | 2638  |19  |Failure  |
-| 5  | 40 360 000  | 2654  | 22  |Failure  |
-| 6   | 40 999 500  | 2913  | 28 |Failure (close) |
-| 7  | 40 509 780  | 2676  | 16  | Failure  |
-| 8  | 29 304 060  | 2011  | 19  |Failure  |
-| 9  | 40 889 120  | 2567  | 19  |Failure  |
-| 10  | 39 837 220  | 2521  | 18  | Failure  |
+| 1   |41 142 440  | 2996  | 18  | Failure  |
+| 2  | 41 174 820  | 2650  | 19  | Failure  |
+| 3  |40 745 160  | 2729  | 19  |Failure  |
+| 4  | 32 488 520  | 2161  |18  |Failure  |
+| 5  | 32 341 460  | 2147  | 18  |Failure  |
+| 6   | 41 169 300  | 2760  | 18 |Failure |
+| 7  | 41 130 340  | 2569  | 19  | Failure  |
+| 8  | 41 066 540  | 2678  | 20  |Failure  |
+| 9  | 40 803 000  | 2521  | 20  |Failure  |
+| 10  | 40 851 880  | 2537  | 18  | Failure  |
 ### Test 6
 File: [testfile6.txt](../src/main/resources/TextsForTesting/testfile6.txt)  
 
@@ -121,16 +120,16 @@ Type: Wikihow article
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   |201 960 | 554  | 964  | Success  |
-| 2  | 3 354 640  | 657  | 354  | Failure  |
-| 3  |69 108  | 265  | 964  |Success  |
-| 4  | 92 528  | 396  |964  |Success  |
-| 5  | 1 715 304  | 442  | 964  |Success  |
-| 6   | 3 262 240  | 564  | 368 |Failure  |
-| 7  | 2 170 092  | 546  | 964  | Success  |
-| 8  | 190 304  | 277  | 964  |Success  |
-| 9  | 3 305 912  | 520 | 964  |Success  |
-| 10  | 1 158 492  | 375  | 964  |Success  |
+| 1   |3 364 400 | 566  | 230  | Failure  |
+| 2  | 1 233 944  | 371  | 964  | Success  |
+| 3  |3 152 732  | 592  | 964  |Success  |
+| 4  | 2 005 292  | 440  |964  |Success  |
+| 5  | 228 772  | 259  | 964  |Success  |
+| 6   | 466 156  | 404  | 964 |Success  |
+| 7  | 2 909 704  | 475  | 964  | Success  |
+| 8  | 388 936 | 302  | 964  |Success  |
+| 9  | 286 988  | 300 | 964  |Success  |
+| 10  | 1 070 564  | 467  | 964  |Success  |
 ### Test 7
 File: [testfile8.txt](../src/main/resources/TextsForTesting/testfile8.txt)  
 
@@ -140,16 +139,16 @@ Type: CS match report
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   |3 878 498 | 848  | 228  | Success  |
-| 2  | 2 861 778  | 570  | 228  | Success  |
-| 3  |4 756 889  | 723  | 228  |Success  |
-| 4  | 4 889 120  | 600  |80  |Failure  |
-| 5  | 4 850 500  | 666  | 101  |Failure  |
-| 6   | 4 942 800  | 671  | 68 |Failure  |
-| 7  | 4 886 060  | 642  | 88  | Failure  |
-| 8  | 4 976 880  | 1131  | 106  |Failure  |
-| 9  | 4 958 980  | 674 | 93  |Failure  |
-| 10  | 2 599 489  | 460  | 228  |Success  |
+| 1   |3 993 289 | 838  | 228  | Success  |
+| 2  | 3 672 769 | 636  | 228  | Success  |
+| 3  |3 368 087  | 507  | 228  |Success  |
+| 4  | 5 442 020  | 685  |87  |Failure  |
+| 5  | 5 184 800  | 784  | 99  |Failure  |
+| 6   | 888 869  | 301  | 228 |Success  |
+| 7  | 5 445 860  | 627  | 59  | Failure  |
+| 8  | 5 086 740  | 663  | 108  |Failure  |
+| 9  | 3 324 769  | 489 | 228  |Success  |
+| 10  | 1 023 969  | 371  | 228  |Success  |
 
 ### Test 8
 File: [testfile9.txt](../src/main/resources/TextsForTesting/testfile9.txt)   
@@ -160,16 +159,16 @@ Type: Meatball recipe
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   |479 528 | 548  | 142  | Success  |
-| 2  | 34 708  | 389  | 142  | Success  |
-| 3  |219 068  | 285  | 142  |Success  |
-| 4  | 2 035 988  | 482  |142  |Success  |
-| 5  | 2 925 676  | 492  | 142  |Success  |
-| 6   | 123 008  | 265  | 142 |Success  |
-| 7  | 625 468  | 351  | 142  | Success  |
-| 8  | 69 888  | 259  | 142  |Success  |
-| 9  | 267 396  | 328 | 142  |Success  |
-| 10  | 4 763 880  | 636  | 38  |Failure  |
+| 1   |61 228 | 498  | 142  | Success  |
+| 2  | 31 808  | 442  | 142  | Success  |
+| 3  |71 268  | 268  | 142  |Success  |
+| 4  | 264 116  | 331  |142  |Success  |
+| 5  | 126 488  | 415  | 142  |Success  |
+| 6   | 404 948  | 265  | 142 |Success  |
+| 7  | 21 448  | 234  | 142  | Success  |
+| 8  | 1 508 088  | 345  | 142  |Success  |
+| 9  | 4 724 000  | 739 | 41  |Failure  |
+| 10  | 73 868  | 296  | 142  |Success  |
 ### Test 9
 File: [lotr.txt](../src/main/resources/TextsForTesting/lotr.txt)   
 
@@ -179,13 +178,13 @@ Type: Book: Lord of the rings: the fellowship of the ring
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
-| 1   |1 038 753 | 513  | 188 589  | Success  |
-| 2  | 2 768 720 | 692  | 62 357  | Failure  |
-| 3  |4 787 403  | 916  | 188 589  |Success  |
-| 4  | 2 161 091  | 745  |188 589  |Success  |
-| 5  | 1 546 833  | 622  | 80 593  |Failure  |
-| 6   | 2 862 220  | 745  | 188 589 |Success  |
-| 7  |  526 893  | 532  | 188 589  | Success  |
-| 8  | 2 838 320  | 830  | 66 661  |Failure  |
-| 9  | 2 395 993  | 655 | 188 589  |Success  |
-| 10  | 3 922 770  | 892  | 188 589  |Success  |
+| 1   |3 147 080 | 1098  | 66 634  | Failure  |
+| 2  | 868 993 | 584  | 188 589  | Success  |
+| 3  |3 503 305  | 912  | 188 589  |Success  |
+| 4  |2 109 911  | 650  |188 589  |Success  |
+| 5  | 3 118 120  | 866 | 71 767  |Failure  |
+| 6   | 3 085 480 | 679  | 74 060 |Failure  |
+| 7  |  3 264 212  | 761  | 188 589  | Success  |
+| 8  | 2 892 200  | 659  | 65 854  |Failure  |
+| 9  | 2 601 913  | 670 | 188 589  |Success  |
+| 10  | 2 976 460  | 646  | 48 368  |Failure  |
