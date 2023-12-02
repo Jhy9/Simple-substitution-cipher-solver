@@ -160,15 +160,15 @@ Type: Meatball recipe
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
 | ------------- | ------------- | ------------- | ------------- |------------- |
 | 1   |479 528 | 548  | 142  | Success  |
-| 2  | 34 708  | 389  | 142  | Failure  |
+| 2  | 34 708  | 389  | 142  | Success  |
 | 3  |219 068  | 285  | 142  |Success  |
 | 4  | 2 035 988  | 482  |142  |Success  |
 | 5  | 2 925 676  | 492  | 142  |Success  |
-| 6   | 123 008  | 265  | 142 |Failure  |
+| 6   | 123 008  | 265  | 142 |Success  |
 | 7  | 625 468  | 351  | 142  | Success  |
 | 8  | 69 888  | 259  | 142  |Success  |
 | 9  | 267 396  | 328 | 142  |Success  |
-| 10  | 4 763 880  | 636  | 38  |Success  |
+| 10  | 4 763 880  | 636  | 38  |Failure  |
 ### Test 9
 File: [lotr.txt](../src/main/resources/TextsForTesting/lotr.txt)   
 
@@ -182,9 +182,9 @@ Type: Book: Lord of the rings: the fellowship of the ring
 | 2  | 2 768 720 | 692  | 62 357  | Failure  |
 | 3  |4 787 403  | 916  | 188 589  |Success  |
 | 4  | 2 161 091  | 745  |188 589  |Success  |
-| 5  | 1 546 833  | 622  | 80 593  |Success  |
-| 6   | 2 862 220  | 745  | 188 589 |Failure  |
+| 5  | 1 546 833  | 622  | 80 593  |Failure  |
+| 6   | 2 862 220  | 745  | 188 589 |Success  |
 | 7  |  526 893  | 532  | 188 589  | Success  |
-| 8  | 2 838 320  | 830  | 66 661  |Success  |
+| 8  | 2 838 320  | 830  | 66 661  |Failure  |
 | 9  | 2 395 993  | 655 | 188 589  |Success  |
 | 10  | 3 922 770  | 892  | 188 589  |Success  |
