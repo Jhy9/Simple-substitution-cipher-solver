@@ -26,3 +26,4 @@ Program should be functional now. The program does not currently have UI.
 
 [Design document](Documentation/Design-document.md)
 
+[Test logs](Documentation/Test-Logs.md)
