@@ -48,10 +48,10 @@ public class Solver{
         ArrayList<String> chosenWords = words;
         for(int round = 0; round < maxRounds;round++){
             if(pickAmount < words.size()){
-                chosenWords = pickWords(words,pickAmount, 1);
+                chosenWords = pickWords(words,pickAmount);
             }
             int comparison = this.dictionary.wordChecker(chosenWords, translator);
-            wordSearches += pickAmount; // forgot to add this for tests(see test discussion from documentation)
+            wordSearches += pickAmount;
             if (comparison == pickAmount){
                 wordSearches += words.size();
                 if((double)this.dictionary.wordChecker(words, translator) / (double)words.size() > 0.95){
@@ -93,25 +93,18 @@ public class Solver{
         return array;
     }
 
-    private ArrayList<String> pickWords(ArrayList<String> wordList, int amount, int style){  
+    private ArrayList<String> pickWords(ArrayList<String> wordList, int amount){  
         HashSet<Integer> chosenWordIndexes = new HashSet();
         ArrayList<String> chosenWords = new ArrayList();
-        if (style == 0){
-            // Picks words from beginning of text (performs much worse)
-            for(int i = 0; i < amount;i++){
-                chosenWords.add(wordList.get(i));
-            }
-        } else{
-            //Picks random words
-            Random r = new Random();
-            while(chosenWordIndexes.size() < amount){
-                chosenWordIndexes.add(r.nextInt(wordList.size()-1));
-            }
-            for(int x: chosenWordIndexes){
-                chosenWords.add(wordList.get(x));
-            }
+        //Picks random words
+        Random r = new Random();
+        while(chosenWordIndexes.size() < amount){
+            chosenWordIndexes.add(r.nextInt(wordList.size()-1));
         }
-        
+        for(int x: chosenWordIndexes){
+            chosenWords.add(wordList.get(x));
+        }
+ 
         return chosenWords;
     }
 }
