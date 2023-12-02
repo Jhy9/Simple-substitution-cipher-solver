@@ -5,7 +5,7 @@ Analysis and discussion can be found here (link coming soon).
 
 
 ## Fields
- - Word search count: How many times algorithm performed a dictionary search for a word.*
+ - Word search count: How many times algorithm performed a dictionary search for a word.
 
  - Time used: How many ms algorithm took to perform task (read cipher+run solver+write solution)
 
@@ -188,3 +188,17 @@ Type: Book: Lord of the rings: the fellowship of the ring
 | 8  | 2 892 200  | 659  | 65 854  |Failure  |
 | 9  | 2 601 913  | 670 | 188 589  |Success  |
 | 10  | 2 976 460  | 646  | 48 368  |Failure  |
+
+## Results with static word picks
+
+| File | Word search count | Time used (ms)  | Found words |S/F |
+| ------------- | ------------- | ------------- | ------------- |------------- |
+| testfile.txt   |41 174 260 | 2511  | 34/98  | Failure  |
+| testfile2.txt  | 41 182 240 | 3025  | 64/186  | Failure  |
+| testfile3.txt  |41 193 320  | 2723  | 196/545  |Failure  |
+| testfile4.txt  |41 193 080  | 2415  |22/54  |Failure  |
+| testfile5.txt  | 41 185 840  | 2362 | 14/30  |Failure  |
+| testfile6.txt   | 41 186 320 | 2530  | 322/976 |Failure  |
+| testfile8.txt  |  41 189 480  | 2685  | 105/249  |Failure  |
+| testfile9.txt  | 41 188 920  | 2638  | 36/148  |Failure  |
+| lotr.txt  | 41 189 540  | 2731 | 74 158/ 195 273  |Failure  |
