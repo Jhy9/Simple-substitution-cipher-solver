@@ -11,11 +11,14 @@ Analysis and discussion can be found here (link coming soon).
 
  - Found words: How many of the words in final answer can be found from used dictionary. (Some words can't be found there)
 
- - S/F: Does final result match the original file.
+ - S/F: Does final result match the original file. (Perfect result means word count at which that happens)
 
 ## Tests
 
-File: testfile.txt  Word count:98 Perfect result : 97 
+### Test 1
+File: [testfile.txt](../src/main/resources/TextsForTesting/testfile.txt)  
+
+Word count:98 Perfect result : 97 
 
 Text type: First paragraph of Wikipedia article
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
@@ -31,8 +34,10 @@ Text type: First paragraph of Wikipedia article
 | 9  | 15 425 612  | 1286  | 97  |Success  |
 | 10  | 5 325 208  | 623  | 97  | Success  |
 
+### Test 2
+File: [testfile2.txt](../src/main/resources/TextsForTesting/testfile2.txt)  
 
-File: testfile2.txt Word count: 186 Perfect result: 179
+Word count: 186 Perfect result: 179
 
 Text type: Satirical news article
 
@@ -49,7 +54,10 @@ Text type: Satirical news article
 | 9  | 2 394 266  | 450  | 179  |Success  |
 | 10  | 2 886 468  | 499  | 179  | Success  |
 
-File: testfile3.txt Word count: 545 Perfect result: 530
+### Test 3
+File:[testfile3.txt](../src/main/resources/TextsForTesting/testfile3.txt)  
+
+Word count: 545 Perfect result: 530
 
 Text type: Opinion piece about football
 
@@ -65,8 +73,10 @@ Text type: Opinion piece about football
 | 8  | 611 805  | 247  | 530  |Success  |
 | 9  | 3 957 950  | 542  | 530  |Success  |
 | 10  | 4 901 240  | 649  | 177  | Failure  |
+### Test 4
+File: [testfile4.txt](../src/main/resources/TextsForTesting/testfile4.txt)  
 
-File: testfile4.txt Word count: 54 Perfect result: 53
+Word count: 54 Perfect result: 53
 
 Text type: Small part of a wikipedia article
 
@@ -82,8 +92,11 @@ Text type: Small part of a wikipedia article
 | 8  | 40 076 800  | 2691  | 28  |Failure  |
 | 9  | 8 890 834  | 851  | 53  |Success  |
 | 10  | 36 409 560  | 2599  | 29  | Failure  |
+### Test 5
+File: [testfile5.txt](../src/main/resources/TextsForTesting/testfile5.txt)  
 
-File: testfile5.txt Word count: 30 Perfect result: 30
+Word count: 30 Perfect result: 30
+
 Text type: Even smaller part of a wikipedia article
 
 | Test number | Word search count | Time used (ms)  | Found words |S/F |
@@ -98,8 +111,10 @@ Text type: Even smaller part of a wikipedia article
 | 8  | 29 304 060  | 2011  | 19  |Failure  |
 | 9  | 40 889 120  | 2567  | 19  |Failure  |
 | 10  | 39 837 220  | 2521  | 18  | Failure  |
+### Test 6
+File: [testfile6.txt](../src/main/resources/TextsForTesting/testfile6.txt)  
 
-File: testfile6.txt Word count: 976 Perfect result: 964
+Word count: 976 Perfect result: 964
 
 Type: Wikihow article
 
@@ -115,8 +130,10 @@ Type: Wikihow article
 | 8  | 190 304  | 277  | 964  |Success  |
 | 9  | 3 305 912  | 520 | 964  |Success  |
 | 10  | 1 158 492  | 375  | 964  |Success  |
+### Test 7
+File: [testfile8.txt](../src/main/resources/TextsForTesting/testfile8.txt)  
 
-File: testfile8.txt Word count: 249 Perfect result: 228
+Word count: 249 Perfect result: 228
 
 Type: CS match report
 
@@ -133,7 +150,10 @@ Type: CS match report
 | 9  | 4 958 980  | 674 | 93  |Failure  |
 | 10  | 2 599 489  | 460  | 228  |Success  |
 
-File: testfile9.txt Word count: 148 Perfect result: 142
+### Test 8
+File: [testfile9.txt](../src/main/resources/TextsForTesting/testfile9.txt)   
+
+Word count: 148 Perfect result: 142
 
 Type: Meatball recipe
 
@@ -149,8 +169,10 @@ Type: Meatball recipe
 | 8  | 69 888  | 259  | 142  |Success  |
 | 9  | 267 396  | 328 | 142  |Success  |
 | 10  | 4 763 880  | 636  | 38  |Success  |
+### Test 9
+File: [lotr.txt](../src/main/resources/TextsForTesting/lotr.txt)   
 
-File: lotr.txt Word count: 195 273 Perfect result: 188 589
+Word count: 195 273 Perfect result: 188 589
 
 Type: Book: Lord of the rings: the fellowship of the ring
 
