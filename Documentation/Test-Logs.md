@@ -1,7 +1,7 @@
 # Test logs
 For each textfile I ran 10 concecutive testruns and marked down results. 
 
-Analysis and discussion can be found [here](./Test-Log-Discussion.md) (link coming soon).
+Analysis and discussion can be found [here](./Test-Log-Discussion.md).
 
 
 ## Fields
