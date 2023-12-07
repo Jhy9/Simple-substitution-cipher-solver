@@ -52,5 +52,5 @@ can't find it's way back. There isn't much that can be reasonably done at that p
 it may be not worth it due to time efficiency decrease that change would cause.
 
 ### Acceptance threshold
-
+In these tests I used manually determined ideal results as acceptance threshold. However this can't be done in final algorithm since in reality we don't know the exact words that our ciphered text contains. More testing is required to find the best solution to this problem.
 
