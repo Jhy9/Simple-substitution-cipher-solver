@@ -1,5 +1,5 @@
 # Test log discussion
-In this document I will go through results of [test log](./Documentation/Test-Logs.md).
+In this document I will go through results of [test log](./Test-Logs.md).
 
 
 ## Used parameters
