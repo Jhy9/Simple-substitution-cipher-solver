@@ -11,6 +11,8 @@ Tests used following parameters:
 
 <b>pickAmount</b> = 20
 
+<b> No termination unless result is acceptanceThreshold or maxrounds is reached.</b>
+
 ## Result recap
 
 Recap of test results:
