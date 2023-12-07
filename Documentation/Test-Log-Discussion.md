@@ -19,7 +19,7 @@ Recap of test results:
 
 (k means thousand and m million)
 
-| Testfile | Success count | Time used (ms)  | Word searches |
+| Testfile | Success rate | Time used (ms)  | Word searches |
 | ------------- | ------------- | ------------- | ------------- |
 | testfile1   | 9/10  | 268-2118  | 120k-21.3 m  |
 | testfile2  | 9/10 | 316-742  | 138k-5.3 m  | 
@@ -34,7 +34,13 @@ Recap of test results:
 ## Discussion
 
 ### Success rates
+Test files can be put in 3 categories based on their success rates:
 
+Testfiles 1,2,3,6 and 9 go into first category of giving almost always right answer.
+
+Testfiles 8 and lotr go into second category of sometimes giving right answers and sometimes wrong ones. Likely explanation on why these texts give worse results than earlier ones is likely that both texts contain words that are not part of English vocabulary: Testfile8 has a lot of foreign names and lotr has names and words created by Tolkien.
+
+Final category is files 4 and 5. These texts didn't do well in testing and rarely give right results. Reason for this is that these texts are short and therefore algorithm doesn't have much to work with and needs to rely on some luck to end up in right answer. Rule of thumb seems to be that shorter the text, the harder it is to solve. 
 
 ### Word search amounts
 
