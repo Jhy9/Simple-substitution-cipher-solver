@@ -1,6 +1,7 @@
 package cipherSolver.IOUtil;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -8,10 +9,14 @@ public class IOservice{
     
     public ArrayList<String> readFile(String filename){
         try{
-            Scanner fileReader = new Scanner(this.getClass().getResourceAsStream("/Input/"+filename));
+            FileReader fileReader = new FileReader("src/main/resources/Input/"+filename);
+            BufferedReader reader = new BufferedReader(fileReader);
             ArrayList<String> wordsInFile = new ArrayList();
-            while(fileReader.hasNextLine()){
-                String line = fileReader.nextLine();
+            while(true){
+                String line = reader.readLine();
+                if(line == null){
+                    break;
+                }
                 String[] wordsLine = line.split(" ");
                 for(String word:wordsLine){
                     String simplified = textSimplifier(word);
@@ -29,12 +34,16 @@ public class IOservice{
     }
 
     public void solutionWriter(char[] solution, String filename){
-        try{     
-            Scanner reader = new Scanner(this.getClass().getResourceAsStream("/Input/"+filename));
+        try{
+            FileReader fileReader = new FileReader("src/main/resources/Input/"+filename);
+            BufferedReader reader = new BufferedReader(fileReader);
             FileWriter fileWriter = new FileWriter("src/main/resources/Output/"+filename,false);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            while(reader.hasNextLine()){
-                String line = reader.nextLine();
+            while(true){
+                String line = reader.readLine();
+                if(line == null){
+                    break;
+                }
                 StringBuilder sb = new StringBuilder();
                 for(int i = 0; i < line.length();i++){
                     char x = line.charAt(i);

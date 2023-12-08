@@ -3,7 +3,8 @@
 package CipherGenerator;
 
 import java.util.Random;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
@@ -11,11 +12,15 @@ public class CipherGenerator{
     public void createCipher(String filename){
         char[] cipherTable = shuffler();
         try{
-            Scanner reader = new Scanner(this.getClass().getResourceAsStream("/TextsForTesting/"+filename));
+            FileReader fileReader = new FileReader("src/main/resources/TextsForTesting/"+filename);
+            BufferedReader reader = new BufferedReader(fileReader);
             FileWriter fileWriter = new FileWriter("src/main/resources/Input/"+filename,false);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            while(reader.hasNextLine()){
-                String line = reader.nextLine();
+            while(true){
+                String line = reader.readLine();
+                if(line == null){
+                    break;
+                }
                 StringBuilder sb = new StringBuilder();
                 for(int i = 0; i < line.length();i++){
                     char x = line.charAt(i);
