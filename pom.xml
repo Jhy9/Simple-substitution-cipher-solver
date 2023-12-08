@@ -68,11 +68,14 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
-        </plugin>
-        <plugin>
+        </plugin>  
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.7.7.201606060606</version>
+          <version>0.8.3</version>
           <executions>
             <execution>
               <goals>
@@ -81,14 +84,16 @@
             </execution>
             <execution>
               <id>report</id>
-              <phase>prepare-package</phase>
+              <phase>test</phase>
               <goals>
                 <goal>report</goal>
               </goals>
+              <configuration>
+                <outputDirectory>target/coverage</outputDirectory>
+              </configuration>
             </execution>
           </executions>
         </plugin>
-      </plugins>
-    </pluginManagement>
+    </plugins>
   </build>
 </project>
