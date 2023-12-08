@@ -1,7 +1,6 @@
 package cipherSolver.Algorithm;
 
 import static org.junit.Assert.*;
-import java.beans.Transient;
 import org.junit.Before;
 import org.junit.Test;
 
