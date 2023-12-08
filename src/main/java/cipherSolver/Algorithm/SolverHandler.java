@@ -9,6 +9,7 @@ public class SolverHandler{
 
     public SolverHandler(){
         this.solver = new Solver();
+        this.solver.addDictionary();
     }
 
     public char[] solveCipher(ArrayList<String> words){

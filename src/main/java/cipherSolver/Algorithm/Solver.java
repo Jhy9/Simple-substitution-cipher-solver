@@ -10,11 +10,11 @@ public class Solver{
     private Dictionary dictionary;
     private char[] simpleFreqs;
     private char[] translator;
-    public Solver(){
+
+    public void addDictionary(){
         this.dictionary = new Dictionary();
     }
-
-    private char[] initSolver(ArrayList<String> words){
+    public char[] initSolver(ArrayList<String> words){
         char[] translator = new char[26];
         Frequency[] dictFreq = this.dictionary.getFrequencies();
         Frequency[] cipherFrequencies = new Frequency[26];
@@ -94,7 +94,7 @@ public class Solver{
         return (double)this.dictionary.wordChecker(words, translator) / (double)words.size();
     }
 
-    private char[] swapper(char[] swapObj, int first, int second){
+    public char[] swapper(char[] swapObj, int first, int second){
         char[] array = swapObj;
         char temp = array[first];
         array[first] = array[second];
@@ -102,7 +102,7 @@ public class Solver{
         return array;
     }
 
-    private ArrayList<String> pickWords(ArrayList<String> wordList, int amount){  
+    public ArrayList<String> pickWords(ArrayList<String> wordList, int amount){  
         HashSet<Integer> chosenWordIndexes = new HashSet();
         ArrayList<String> chosenWords = new ArrayList();
         //Picks random words

@@ -66,7 +66,7 @@ public class IOservice{
         }
     }
 
-    private String textSimplifier(String s){
+    public String textSimplifier(String s){
         StringBuilder simplified = new StringBuilder();
         String sLower = s.toLowerCase();
         for (int i = 0; i < sLower.length();i++){
