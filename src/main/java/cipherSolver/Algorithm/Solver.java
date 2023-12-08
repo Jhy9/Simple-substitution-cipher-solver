@@ -9,7 +9,7 @@ import java.util.HashSet;
 public class Solver{
     private Dictionary dictionary;
     private char[] simpleFreqs;
-
+    private char[] translator;
     public Solver(){
         this.dictionary = new Dictionary();
     }
@@ -36,8 +36,8 @@ public class Solver{
         return translator;
     }
 
-    public char[] solve(ArrayList<String> words, int maxRounds){
-        char[] translator = initSolver(words);
+    public double solve(ArrayList<String> words, int maxRounds, double acceptanceThreshold){
+        this.translator = initSolver(words);
         int pickAmount = 0;
         long wordSearches = 0;
         if(words.size() > 25){
@@ -46,6 +46,7 @@ public class Solver{
             pickAmount = words.size();
         }
         ArrayList<String> chosenWords = words;
+        int strikes = 0;
         for(int round = 0; round < maxRounds;round++){
             if(pickAmount < words.size()){
                 chosenWords = pickWords(words,pickAmount);
@@ -54,8 +55,11 @@ public class Solver{
             wordSearches += pickAmount;
             if (comparison == pickAmount){
                 wordSearches += words.size();
-                if((double)this.dictionary.wordChecker(words, translator) / (double)words.size() > 0.95){
-                    break;
+                if((double)this.dictionary.wordChecker(words, translator) / (double)words.size() > acceptanceThreshold){
+                    System.out.println("Solver results: ");
+                    System.out.println("Algorithm performed " + wordSearches + " word searches from dictionary.");
+                    System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
+                    return (double)this.dictionary.wordChecker(words, translator) / (double)words.size();
                 }
             }
             boolean foundBetter = false;
@@ -75,14 +79,19 @@ public class Solver{
                     }
                 }
                 if(foundBetter == true){
+                    strikes = 0;
                     break;
                 }
+            }
+            strikes++;
+            if(strikes >= 50){
+                break;
             }
         }
         System.out.println("Solver results: ");
         System.out.println("Algorithm performed " + wordSearches + " word searches from dictionary.");
         System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
-        return translator;
+        return (double)this.dictionary.wordChecker(words, translator) / (double)words.size();
     }
 
     private char[] swapper(char[] swapObj, int first, int second){
@@ -106,5 +115,9 @@ public class Solver{
         }
  
         return chosenWords;
+    }
+
+    public char[] getTranslator(){
+        return this.translator;
     }
 }

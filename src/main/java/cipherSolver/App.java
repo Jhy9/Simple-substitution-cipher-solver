@@ -25,13 +25,14 @@ public class App{
             long finish = System.currentTimeMillis();
             System.out.println("Time used "+ (finish-start) + " ms");
         }
+        inputReader.close();
     }
 
     private static void solveTestFile(String filename){
-        Solver solver = new Solver();
+        SolverHandler solver = new SolverHandler();
         IOservice io = new IOservice();   
         ArrayList<String> words = io.readFile(filename);
-        char[] solution = solver.solve(words, 10000);
+        char[] solution = solver.solveCipher(words);
         io.solutionWriter(solution,filename);
     }
 }
