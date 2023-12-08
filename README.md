@@ -1,7 +1,7 @@
 # Simple substitution cipher solver
 
 [![codecov](https://codecov.io/gh/Jhy9/Simple-substitution-cipher-solver/graph/badge.svg?token=QXV5FMENMK)](https://codecov.io/gh/Jhy9/Simple-substitution-cipher-solver)
-
+![ci](https://github.com/Jhy9/Simple-substitution-cipher-solver/actions/workflows/maven.yml/badge.svg)
 ## READ THIS:
 
 Program should be functional now. The program does not currently have UI.
