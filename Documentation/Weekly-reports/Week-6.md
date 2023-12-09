@@ -1,7 +1,7 @@
 # Week 6
 
 ## What was done?
-- Wrote discussion about first set of [tests](../Test-Log-Discussion.md)
+- Wrote discussion about first set of tests
 - Tweaked algorithm so that now it dynamically increases acceptance threshold instead of being static
 - Wrote some unit tests and wrote coverage report
 
