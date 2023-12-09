@@ -1,7 +1,6 @@
-
-// This class will contain cipher generator that can be used for testing
 package CipherGenerator;
 
+// This class will contain cipher generator that can be used for testing
 import java.util.Random;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -43,7 +42,7 @@ public class CipherGenerator{
         }
     }
 
-    private char[] shuffler(){
+    public char[] shuffler(){
         char[] letterOrder = new char[26];
         for (int i = 0; i < 26; i++){
             letterOrder[i] = (char)((int)'a'+i);
