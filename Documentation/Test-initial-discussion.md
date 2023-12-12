@@ -3,7 +3,7 @@
 Note:
 Tests discussed here were done with old version of algorithm.
 
-In this document I will go through results of [test log](./Test-Logs.md).
+In this document I will go through results of [test log](./Test-initial-logs.md).
 
 
 ## Used parameters
