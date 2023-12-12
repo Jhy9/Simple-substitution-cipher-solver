@@ -1,4 +1,6 @@
 # Test logs
+These tests were based on old version of algorithm that is no longer available.
+
 For each textfile I ran 10 concecutive testruns and marked down results. 
 
 Analysis and discussion can be found [here](./Test-Log-Discussion.md).
