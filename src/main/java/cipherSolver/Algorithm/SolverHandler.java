@@ -15,17 +15,16 @@ public class SolverHandler{
     public char[] solveCipher(ArrayList<String> words){
         double currentBest = 0;
         char[] bestTranslator = null;
-        for(double acceptanceThreshold = 0.84; acceptanceThreshold <= 1;acceptanceThreshold += 0.02){
+        int acceptanceThreshold = (int)(0.8*words.size());
+        while(true){
             boolean resultImproved = false;
-            for(int attempts = 1; attempts <= 3;attempts++){
-                double result = this.solver.solve(words,10000,acceptanceThreshold);
-                System.out.println(acceptanceThreshold);
+            for(int attempts = 1; attempts <= 5;attempts++){
+                int result = this.solver.solve(words,10000,acceptanceThreshold);
                 if(result > currentBest){
                     currentBest = result;
                     bestTranslator = solver.getTranslator();
-                }
-                if(result >= acceptanceThreshold){
                     resultImproved = true;
+                    acceptanceThreshold = result;
                     break;
                 }
             }

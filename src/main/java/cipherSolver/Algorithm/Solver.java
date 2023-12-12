@@ -36,12 +36,12 @@ public class Solver{
         return translator;
     }
 
-    public double solve(ArrayList<String> words, int maxRounds, double acceptanceThreshold){
+    public int solve(ArrayList<String> words, int maxRounds, int acceptanceThreshold){
         this.translator = initSolver(words);
         int pickAmount = 0;
         long wordSearches = 0;
-        if(words.size() > 25){
-            pickAmount = 20;
+        if(words.size() > 35){
+            pickAmount = 30;
         } else{
             pickAmount = words.size();
         }
@@ -55,11 +55,11 @@ public class Solver{
             wordSearches += pickAmount;
             if (comparison == pickAmount){
                 wordSearches += words.size();
-                if((double)this.dictionary.wordChecker(words, translator) / (double)words.size() > acceptanceThreshold){
+                if(this.dictionary.wordChecker(words, translator) > acceptanceThreshold){
                     System.out.println("Solver results: ");
                     System.out.println("Algorithm performed " + wordSearches + " word searches from dictionary.");
                     System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
-                    return (double)this.dictionary.wordChecker(words, translator) / (double)words.size();
+                    return this.dictionary.wordChecker(words, translator);
                 }
             }
             boolean foundBetter = false;
@@ -91,7 +91,7 @@ public class Solver{
         System.out.println("Solver results: ");
         System.out.println("Algorithm performed " + wordSearches + " word searches from dictionary.");
         System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
-        return (double)this.dictionary.wordChecker(words, translator) / (double)words.size();
+        return this.dictionary.wordChecker(words, translator);
     }
 
     public char[] swapper(char[] swapObj, int first, int second){
