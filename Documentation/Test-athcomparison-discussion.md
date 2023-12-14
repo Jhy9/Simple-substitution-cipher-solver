@@ -24,7 +24,7 @@ Having it dynamically determined would cause program to always run solver with t
  - It is simple and requires no overhead while acceptance threshold needs to controlled from outside of the solver. 
  - More significantly it only needs to check a value of a constant while acceptance threshold needs to always translate a large part if not all of the ciphered text when it investigates conditions for termination.
 
-Therefore it is worth investigating the performance differences of only using strike system vs using acceptance threshold+ strike system.
+Therefore it is worth investigating the performance differences between only using strike system vs using acceptance threshold+ strike system.
 
 
 
