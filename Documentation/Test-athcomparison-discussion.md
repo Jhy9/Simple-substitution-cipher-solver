@@ -1,4 +1,4 @@
-
+# Dynamic acceptance threshold vs no acceptance threshold - discussion
 
 In this document I discuss and compare test results from two variants of algorithm that use different tactics in terms of acceptance thresholds: [Dynath](./Test-dynath-logs.md)
 that uses dynamically determined acceptance threshold and [Nonath](./Test-noath-logs.md) that doesn't use any acceptance threshold.
@@ -27,13 +27,31 @@ Having it dynamically determined would cause program to always run solver with t
 Therefore it is worth investigating the performance differences between only using strike system vs using acceptance threshold+ strike system.
 
 
-
 ## Results
+In the test logs we can see that neither noath or dynath had any failures in tests.
 
+Comparing average runtimes for each testfile:
 
+| Testfile | Dynamic ath | No ath |
+| ------------- | ------------- | ------------- |
+| testfile   | 4427  | 2871  |
+| testfile2  | 3133   | 3396 |
+| testfile3  | 1590   | 1740  |
+| testfile8  | 2916   | 2635  |
+| lotr  | 5434  | 2191  |
 
+For testfiles 2,3 and 8 differences are quite small and can be accounted as randomness. 
+However for testfile1 and lotr we can see that noath performed significantly better compared to dynath on average.
 
 ## Conclusions
+While sample size for these tests is not big I think we can see two things from results:
+ 1. There is no significant overall performance benefit in using acceptance threshold
+ 2. In case of some texts, using acceptance threshold slows down algorithm
 
+First point wasn't that obvious going into these tests. Even though ath can't terminate solver for around half of its runs, I was kind of expecting the other half when it can to make up for it much more than it did. Therefore it is a little bit suprising to see that even in more favorable cases for dynath, the performance is just around the same as noath.  
+Second point didn't come as a suprise. The reason for this slow down is that when translator is "almost ready" it starts to trigger ath almost every round causing constant large scale dictionary searches to happen. This is a big problem for long texts like lotr and some other individual texts like testfile1.
+
+
+Therefore it seems that the best choice going forwards is to remove usage of acceptance threshold and only use strike system.
 
 
