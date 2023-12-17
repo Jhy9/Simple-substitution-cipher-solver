@@ -18,7 +18,7 @@ Analysis and discussion can be found [here](../Test-initial-discussion.md).
 ## Tests
 
 ### Test 1
-File: [testfile.txt](.../src/main/resources/TextsForTesting/testfile.txt)  
+File: [testfile.txt](../../src/main/resources/TextsForTesting/testfile.txt)  
 
 Word count:98 Perfect result : 97 
 
@@ -37,7 +37,7 @@ Text type: First paragraph of Wikipedia article
 | 10  | 16 575 514  | 1370  | 97  | Success  |
 
 ### Test 2
-File: [testfile2.txt](../src/main/resources/TextsForTesting/testfile2.txt)  
+File: [testfile2.txt](../../src/main/resources/TextsForTesting/testfile2.txt)  
 
 Word count: 186 Perfect result: 179
 
@@ -57,7 +57,7 @@ Text type: Satirical news article
 | 10  | 1 336 912  | 325  | 179  | Success  |
 
 ### Test 3
-File:[testfile3.txt](../src/main/resources/TextsForTesting/testfile3.txt)  
+File:[testfile3.txt](../../src/main/resources/TextsForTesting/testfile3.txt)  
 
 Word count: 545 Perfect result: 530
 
@@ -76,7 +76,7 @@ Text type: Opinion piece about football
 | 9  | 4 709 960  | 778  | 164  |Failure  |
 | 10  | 2 816 445  | 438  | 530  | Success  |
 ### Test 4
-File: [testfile4.txt](../src/main/resources/TextsForTesting/testfile4.txt)  
+File: [testfile4.txt](../../src/main/resources/TextsForTesting/testfile4.txt)  
 
 Word count: 54 Perfect result: 53
 
@@ -95,7 +95,7 @@ Text type: Small part of a wikipedia article
 | 9  | 37 886 560  | 2533  | 31  |Failure  |
 | 10  | 40 119 180  | 2589  | 26  | Failure  |
 ### Test 5
-File: [testfile5.txt](../src/main/resources/TextsForTesting/testfile5.txt)  
+File: [testfile5.txt](../../src/main/resources/TextsForTesting/testfile5.txt)  
 
 Word count: 30 Perfect result: 30
 
@@ -114,7 +114,7 @@ Text type: Even smaller part of a wikipedia article
 | 9  | 40 803 000  | 2521  | 20  |Failure  |
 | 10  | 40 851 880  | 2537  | 18  | Failure  |
 ### Test 6
-File: [testfile6.txt](../src/main/resources/TextsForTesting/testfile6.txt)  
+File: [testfile6.txt](../../src/main/resources/TextsForTesting/testfile6.txt)  
 
 Word count: 976 Perfect result: 964
 
@@ -133,7 +133,7 @@ Type: Wikihow article
 | 9  | 286 988  | 300 | 964  |Success  |
 | 10  | 1 070 564  | 467  | 964  |Success  |
 ### Test 7
-File: [testfile8.txt](../src/main/resources/TextsForTesting/testfile8.txt)  
+File: [testfile8.txt](../../src/main/resources/TextsForTesting/testfile8.txt)  
 
 Word count: 249 Perfect result: 228
 
@@ -153,7 +153,7 @@ Type: CS match report
 | 10  | 1 023 969  | 371  | 228  |Success  |
 
 ### Test 8
-File: [testfile9.txt](../src/main/resources/TextsForTesting/testfile9.txt)   
+File: [testfile9.txt](../../src/main/resources/TextsForTesting/testfile9.txt)   
 
 Word count: 148 Perfect result: 142
 
@@ -172,7 +172,7 @@ Type: Meatball recipe
 | 9  | 4 724 000  | 739 | 41  |Failure  |
 | 10  | 73 868  | 296  | 142  |Success  |
 ### Test 9
-File: [lotr.txt](../src/main/resources/TextsForTesting/lotr.txt)   
+File: [lotr.txt](../../src/main/resources/TextsForTesting/lotr.txt)   
 
 Word count: 195 273 Perfect result: 188 589
 
