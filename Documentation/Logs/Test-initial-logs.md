@@ -3,7 +3,7 @@ These tests were based on old version of algorithm that is no longer available.
 
 For each textfile I ran 10 concecutive testruns and marked down results. 
 
-Analysis and discussion can be found [here](.../Test-initial-discussion.md).
+Analysis and discussion can be found [here](../Test-initial-discussion.md).
 
 
 ## Fields
@@ -18,7 +18,7 @@ Analysis and discussion can be found [here](.../Test-initial-discussion.md).
 ## Tests
 
 ### Test 1
-File: [testfile.txt](../src/main/resources/TextsForTesting/testfile.txt)  
+File: [testfile.txt](.../src/main/resources/TextsForTesting/testfile.txt)  
 
 Word count:98 Perfect result : 97 
 
