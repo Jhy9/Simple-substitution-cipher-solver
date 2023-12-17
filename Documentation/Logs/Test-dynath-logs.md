@@ -8,7 +8,7 @@
 ## Tests
 
 ### Test 1
-File: [testfile.txt](../src/main/resources/TextsForTesting/testfile.txt)  
+File: [testfile.txt](../../src/main/resources/TextsForTesting/testfile.txt)  
 
 Word count:98
 
@@ -26,7 +26,7 @@ Word count:98
 | 10  | 68.6  | 4581  |  S  |
 
 ### Test 2
-File: [testfile2.txt](../src/main/resources/TextsForTesting/testfile2.txt)  
+File: [testfile2.txt](../../src/main/resources/TextsForTesting/testfile2.txt)  
 
 Word count: 186
 
@@ -44,7 +44,7 @@ Word count: 186
 | 10  | 40.4 | 3693  | S |
 
 ### Test 3
-File:[testfile3.txt](../src/main/resources/TextsForTesting/testfile3.txt)  
+File:[testfile3.txt](../../src/main/resources/TextsForTesting/testfile3.txt)  
 
 Word count: 545
 
@@ -62,7 +62,7 @@ Word count: 545
 | 10  | 21.3 | 2161 | S  |
 
 ### Test 4
-File: [testfile8.txt](../src/main/resources/TextsForTesting/testfile8.txt)  
+File: [testfile8.txt](../../src/main/resources/TextsForTesting/testfile8.txt)  
 
 Word count: 249
 
@@ -80,7 +80,7 @@ Word count: 249
 | 10  | 30.3  | 2758  |  S  |
 
 ### Test 5
-File: [lotr.txt](../src/main/resources/TextsForTesting/lotr.txt)   
+File: [lotr.txt](../../src/main/resources/TextsForTesting/lotr.txt)   
 
 Word count: 195 273 
 
