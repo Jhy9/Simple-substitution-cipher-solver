@@ -1,7 +1,7 @@
 # Dynamic acceptance threshold vs no acceptance threshold - discussion
 
-In this document I discuss and compare test results from two variants of algorithm that use different tactics in terms of acceptance thresholds: [Dynath](./Test-dynath-logs.md)
-that uses dynamically determined acceptance threshold and [Nonath](./Test-noath-logs.md) that doesn't use any acceptance threshold.
+In this document I discuss and compare test results from two variants of algorithm that use different tactics in terms of acceptance thresholds: [Dynath](./Logs/Test-dynath-logs.md)
+that uses dynamically determined acceptance threshold and [Nonath](./Logs/Test-noath-logs.md) that doesn't use any acceptance threshold.
 
 
 ## Background
