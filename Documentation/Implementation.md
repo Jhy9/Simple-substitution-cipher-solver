@@ -35,7 +35,7 @@ Switching is done in cycles that go like this:
 ### Complexities
 Space complexity of solver is O(n) where n is the size of ciphered text.
 
-Time complexity of solver is approximately O(1). It is somewhat dependant on complexity of ciphered text but that complexity cannot be properly described in O-notation.
+Time complexity of solver is approximately O(1). It is somewhat dependant on "difficulty" of ciphered text but that complexity cannot be properly described in O-notation.
 
 ## Solver handler
 
