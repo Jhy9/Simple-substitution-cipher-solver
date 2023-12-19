@@ -6,25 +6,28 @@ import cipherSolver.Algorithm.Solver;
 public class SolverHandler{
 
     private Solver solver;
-
+    private int currentBest;
+    private int wordsSize;
+    private long execTime;
     public SolverHandler(){
         this.solver = new Solver();
         this.solver.addDictionary();
+        
     }
 
     public char[] solveCipher(ArrayList<String> words){
-        double currentBest = 0;
+        currentBest = 0;
+        wordsSize = words.size();
         char[] bestTranslator = null;
-        int acceptanceThreshold = (int)(0.8*words.size());
+        long start = System.currentTimeMillis();
         while(true){
             boolean resultImproved = false;
             for(int attempts = 1; attempts <= 5;attempts++){
-                int result = this.solver.solve(words,10000,acceptanceThreshold);
+                int result = this.solver.solve(words);
                 if(result > currentBest){
                     currentBest = result;
                     bestTranslator = solver.getTranslator();
                     resultImproved = true;
-                    acceptanceThreshold = result;
                     break;
                 }
             }
@@ -32,6 +35,16 @@ public class SolverHandler{
                 break;
             }
         }
+        long end = System.currentTimeMillis();
+        execTime = end - start;
         return bestTranslator;
+    }
+    public String getPerformanceData(){
+        StringBuilder data = new StringBuilder();
+        data.append("Results: " + '\n');
+        data.append("Found "+ currentBest + " of " + wordsSize+ " words." + '\n');
+        data.append(solver.wordSearches() + '\n');
+        data.append("Time used "+ execTime + " ms");
+        return data.toString();
     }
 }

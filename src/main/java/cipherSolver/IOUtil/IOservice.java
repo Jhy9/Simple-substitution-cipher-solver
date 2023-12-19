@@ -33,13 +33,15 @@ public class IOservice{
         }
     }
 
-    public void solutionWriter(char[] solution, String filename){
+    public String solutionWriter(char[] solution, String filename){
         try{
             FileReader fileReader = new FileReader("src/main/resources/Input/"+filename);
             BufferedReader reader = new BufferedReader(fileReader);
             FileWriter fileWriter = new FileWriter("src/main/resources/Output/"+filename,false);
             BufferedWriter writer = new BufferedWriter(fileWriter);
+            StringBuilder outputString = new StringBuilder();
             while(true){
+                boolean lineChange = false;
                 String line = reader.readLine();
                 if(line == null){
                     break;
@@ -55,14 +57,27 @@ public class IOservice{
                         x = (char)(solution[ascii-(int)'a']);
                     }
                     sb.append(x);
+                    if(sb.length() % 80 == 0 && sb.length() > 0){
+                        lineChange = true;
+                    }
+                    if(lineChange == true && x == ' '){
+                        outputString.append('\n');
+                        lineChange = false; 
+                    } else{
+                        outputString.append(x);
+                    }
+                    
                 }
                 writer.write(sb.toString());
                 writer.newLine();
+                outputString.append('\n');
             }
             writer.close();
             reader.close();
+            return outputString.toString();
         }catch(Exception e){
             System.out.println(e.toString());
+            return "";
         }
     }
 

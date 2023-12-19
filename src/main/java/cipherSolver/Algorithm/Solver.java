@@ -10,8 +10,10 @@ public class Solver{
     private Dictionary dictionary;
     private char[] simpleFreqs;
     private char[] translator;
+    private long wordSearches;
 
     public void addDictionary(){
+        this.wordSearches = 0;
         this.dictionary = new Dictionary();
     }
     public char[] initSolver(ArrayList<String> words){
@@ -36,10 +38,9 @@ public class Solver{
         return translator;
     }
 
-    public int solve(ArrayList<String> words, int maxRounds, int acceptanceThreshold){
+    public int solve(ArrayList<String> words){
         this.translator = initSolver(words);
         int pickAmount = 0;
-        long wordSearches = 0;
         if(words.size() > 35){
             pickAmount = 30;
         } else{
@@ -47,21 +48,12 @@ public class Solver{
         }
         ArrayList<String> chosenWords = words;
         int strikes = 0;
-        for(int round = 0; round < maxRounds;round++){
+        for(int round = 0; round < 10000;round++){
             if(pickAmount < words.size()){
                 chosenWords = pickWords(words,pickAmount);
             }
             int comparison = this.dictionary.wordChecker(chosenWords, translator);
             wordSearches += pickAmount;
-            if (comparison == pickAmount){
-                wordSearches += words.size();
-                if(this.dictionary.wordChecker(words, translator) > acceptanceThreshold){
-                    System.out.println("Solver results: ");
-                    System.out.println("Algorithm performed " + wordSearches + " word searches from dictionary.");
-                    System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
-                    return this.dictionary.wordChecker(words, translator);
-                }
-            }
             boolean foundBetter = false;
             for(int difference = 1; difference <= 10; difference++){
                 // Switch 2 letters places in translation, if result is better than current best, keep change and move on to next round. 
@@ -88,9 +80,6 @@ public class Solver{
                 break;
             }
         }
-        System.out.println("Solver results: ");
-        System.out.println("Algorithm performed " + wordSearches + " word searches from dictionary.");
-        System.out.println("Found "+ this.dictionary.wordChecker(words, translator) + " of " + words.size()+ " words.");
         return this.dictionary.wordChecker(words, translator);
     }
 
@@ -119,5 +108,8 @@ public class Solver{
 
     public char[] getTranslator(){
         return this.translator;
+    }
+    public String wordSearches(){
+        return ("Algorithm performed " + wordSearches + " word searches from dictionary.");
     }
 }

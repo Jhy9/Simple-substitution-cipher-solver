@@ -8,7 +8,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class CipherGenerator{
-    public void createCipher(String filename){
+    public boolean createCipher(String filename){
         char[] cipherTable = shuffler();
         try{
             FileReader fileReader = new FileReader("src/main/resources/TextsForTesting/"+filename);
@@ -37,8 +37,10 @@ public class CipherGenerator{
             }
             writer.close();
             reader.close();
+            return true;
         }catch(Exception e){
             System.out.println(e.toString());
+            return false;
         }
     }
 
