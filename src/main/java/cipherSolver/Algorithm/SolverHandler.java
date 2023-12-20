@@ -29,7 +29,8 @@ public class SolverHandler{
         wordsSize = words.size();
         char[] bestTranslator = null;
         long start = System.currentTimeMillis();
-        while(true){
+        int improvements = 0;
+        while(improvements < 10){
             boolean resultImproved = false;
             for(int attempts = 1; attempts <= 5;attempts++){
                 int result = this.solver.solve(words);
@@ -44,6 +45,7 @@ public class SolverHandler{
             if(resultImproved == false){
                 break;
             }
+            improvements++;
         }
         long end = System.currentTimeMillis();
         execTime = end - start;
