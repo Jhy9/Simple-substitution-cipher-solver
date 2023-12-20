@@ -56,11 +56,6 @@ public class Dictionary{
         return this.frequencies;
     }
 
-    public void printFrequencies(){
-        for(int i = 0; i < this.frequencies.length;i++){
-            System.out.println(this.frequencies[i].getLetter() +": "+ this.frequencies[i].getCount());
-        }
-    }
     public Node getHead(){
         return this.head;
     }

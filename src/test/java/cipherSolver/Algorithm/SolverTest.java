@@ -3,7 +3,7 @@ package cipherSolver.Algorithm;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-
+import java.util.Arrays;
 import java.util.ArrayList;
 
 public class SolverTest
@@ -57,4 +57,15 @@ public class SolverTest
         assertTrue(result.size() == 3);
     }
 
+    @Test
+    public void initSetsCorrectTranslatorStartPoint(){
+        this.solve.addDictionary();
+        ArrayList<String> words = new ArrayList();
+        words.add("bbvme");
+        words.add("bbhrmih");
+        words.add("lkmbbbb");
+        words.add("mjaabbbbyj");
+        words.add("mvkfbb");
+        assertEquals(this.solve.initSolver(words)[1],'e');
+    }
 }

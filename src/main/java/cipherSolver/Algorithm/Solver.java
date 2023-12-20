@@ -40,18 +40,11 @@ public class Solver{
 
     public int solve(ArrayList<String> words){
         this.translator = initSolver(words);
-        int pickAmount = 0;
-        if(words.size() > 35){
-            pickAmount = 30;
-        } else{
-            pickAmount = words.size();
-        }
+        int pickAmount = Math.min(30,(int)(words.size()/2));
         ArrayList<String> chosenWords = words;
         int strikes = 0;
         for(int round = 0; round < 10000;round++){
-            if(pickAmount < words.size()){
-                chosenWords = pickWords(words,pickAmount);
-            }
+            chosenWords = pickWords(words,pickAmount);
             int comparison = this.dictionary.wordChecker(chosenWords, translator);
             wordSearches += pickAmount;
             boolean foundBetter = false;
