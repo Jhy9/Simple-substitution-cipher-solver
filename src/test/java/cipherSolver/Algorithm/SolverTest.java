@@ -68,4 +68,5 @@ public class SolverTest
         words.add("mvkfbb");
         assertEquals(this.solve.initSolver(words)[1],'e');
     }
+
 }

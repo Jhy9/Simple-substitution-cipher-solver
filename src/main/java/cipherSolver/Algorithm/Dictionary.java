@@ -1,10 +1,12 @@
 package cipherSolver.Algorithm;
 
-
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/**
+ * Class that implements dictionary
+*/
 public class Dictionary{
     private Node head;
     private Frequency[] frequencies;
@@ -18,6 +20,9 @@ public class Dictionary{
         addDictionary();
     }
 
+    /** 
+     * Reads dictionary textfile and creates trie based on it
+    */
     private void addDictionary(){
         try{
             Scanner dictReader = new Scanner(this.getClass().getResourceAsStream("/dictionary.txt"));
@@ -36,6 +41,12 @@ public class Dictionary{
         }
     }
 
+    /**
+     * Tests translator by translating given words with it and then searching dictionary for resulting words.
+     * @param words Words we are looking for in ciphered form
+     * @param translator Translator used to decipher words
+     * @return Amount of words that were found
+     */
     public int wordChecker(ArrayList<String> words, char[] translator){
         int correctWords = 0;
         for(String word:words){
@@ -51,12 +62,12 @@ public class Dictionary{
         }
         return correctWords;
     }
-
+    /**
+     * 
+     * @return Frequencies of all letters found in dictionary
+     */
     public Frequency[] getFrequencies(){
         return this.frequencies;
     }
 
-    public Node getHead(){
-        return this.head;
-    }
 }

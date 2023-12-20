@@ -5,8 +5,19 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+
+/**
+ * Class for reading ciphered texts from file and writing answers into a file
+ */
+
 public class IOservice{
     
+    /**
+     * Reads ciphers from file
+     * 
+     * @param filename Filename as it is in input folder
+     * @return Words that are in file as arraylist
+     */
     public ArrayList<String> readFile(String filename){
         try{
             FileReader fileReader = new FileReader("src/main/resources/Input/"+filename);
@@ -33,6 +44,13 @@ public class IOservice{
         }
     }
 
+    /**
+     * Writes algorithm solution into a file
+     * 
+     * @param solution  Translating array for translating ciphered text 
+     * @param filename Filename for output
+     * @return Deciphered text for GUI
+     */
     public String solutionWriter(char[] solution, String filename){
         try{
             FileReader fileReader = new FileReader("src/main/resources/Input/"+filename);
@@ -80,7 +98,12 @@ public class IOservice{
             return "";
         }
     }
-
+    /**
+     * Strips strings from everything but letters and lowercases them
+     * 
+     * @param s String that we want to simplify
+     * @return Simplified version of s
+     */
     public String textSimplifier(String s){
         StringBuilder simplified = new StringBuilder();
         String sLower = s.toLowerCase();

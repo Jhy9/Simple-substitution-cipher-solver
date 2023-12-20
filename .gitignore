@@ -2,3 +2,4 @@ target/
 AppTest.java
 src/main/resources/Input/*.txt
 src/main/resources/Output/*.txt
+javadoc/

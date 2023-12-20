@@ -12,10 +12,9 @@ import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import CipherGenerator.CipherGenerator;
+import cipherSolver.CipherGenerator.*;
 import cipherSolver.Algorithm.*;
 import cipherSolver.IOUtil.*;
-import cipherSolver.CipherGenerator.*;
 import java.util.ArrayList;
 
 public class FXApp extends Application{

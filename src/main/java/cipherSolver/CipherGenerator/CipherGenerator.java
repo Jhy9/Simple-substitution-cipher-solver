@@ -1,13 +1,24 @@
-package CipherGenerator;
+package cipherSolver.CipherGenerator;
 
-// This class will contain cipher generator that can be used for testing
+
 import java.util.Random;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
+/**
+ * Creates ciphers from testing texts
+ * 
+ */
+
 public class CipherGenerator{
+
+    /**
+     * Transforms testing text into a cipher and writes it into a file
+     * @param filename Name of the testing text 
+     * @return Information whether or not cipher was created
+     */
     public boolean createCipher(String filename){
         char[] cipherTable = shuffler();
         try{
@@ -44,6 +55,10 @@ public class CipherGenerator{
         }
     }
 
+    /**
+     * Shuffles letter order around to create array used for ciphering
+     * @return Array that tells how letters are replaced in ciphered texts
+     */
     public char[] shuffler(){
         char[] letterOrder = new char[26];
         for (int i = 0; i < 26; i++){
