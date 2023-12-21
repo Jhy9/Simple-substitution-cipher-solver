@@ -3,7 +3,7 @@ These tests were made with final version of program using default testfiles foun
 
 ## Fields
 
- - Time used: How many ms algorithm took to perform task (read cipher+run solver+write solution)
+ - Time used: How many ms algorithm took to decipher text.
 
  - S/F: Does final result match the original file.
 
