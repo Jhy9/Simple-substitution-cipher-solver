@@ -4,7 +4,11 @@
 
 ## Using program
 Textfield "Filename" in lower right takes name of the file as input. Filename should be written as it appears in folder, for example "testfile.txt".
-Button "Create testfile" takes file with from folder TextsForTesting and creates ciphered version of it with same filename into folder src/main/resources/Input.  
+
+
+Button "Create testfile" takes file with from folder TextsForTesting and creates ciphered version of it with same filename into folder src/main/resources/Input. 
+
+
 Button "Decipher" takes file from folder src/main/resources/Input and deciphers it. Program automatically shows deciphered text and performance data from algortithm as this command is given. After text has been deciphered, it can be found in folder src/main/resources/Output. 
 
 ## Text files
