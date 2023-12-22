@@ -2,7 +2,7 @@
 
 
 ## Dictionary
-Program has a dictionary as a textfile that gets turned into a trie during runtime. Each node in trie contains an array of children which depict the next letters and a boolean that tells whether or not the node 
+Program has a dictionary as a textfile that is used to create trie during program execution. Each node in trie contains an array of children which depict the next letters and a boolean that tells whether or not the node 
 is an ending for a word.
 
 ### Complexities: 
