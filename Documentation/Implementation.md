@@ -32,11 +32,14 @@ Switching is done in cycles that go like this:
   
   Switching is stopped, if it has either gone full 10000 cycles or algorithm hasn't found a valid switch in 50 consecutive ones.
   
+### Solver handler
+Class solver handler executes solver until no improvement in results are found. This is done to combat inconsistency of individual solver executions.
+
 ### Complexities
 Space complexity of solver is O(n) where n is the size of ciphered text.
 
 Time complexity of solver is approximately O(1). It is somewhat dependant on "difficulty" of ciphered text but that complexity cannot be properly described numerically.
 
-## Solver handler
 
-
+## Large language models
+Large language models weren't used in this project.
