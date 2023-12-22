@@ -6,7 +6,7 @@ This document describes different types of testing done with the algorithm.
 
 Unittest coverage can be found here 
 [![codecov](https://codecov.io/gh/Jhy9/Simple-substitution-cipher-solver/graph/badge.svg?token=QXV5FMENMK)](https://codecov.io/gh/Jhy9/Simple-substitution-cipher-solver)  
-GUI and methods that only do file reading and writing were not tested with unittests. 
+GUI and solution writing were not tested within unittests. 
 
 ## Mid-development testing
 Two sets of tests were done mid-development to observe algorithms functionality and to find potential improvements for algorithm.
