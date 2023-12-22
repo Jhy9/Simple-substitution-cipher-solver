@@ -38,7 +38,7 @@ Class solver handler executes solver until no improvement in results are found. 
 ### Complexities
 Space complexity of solver is O(n) where n is the size of ciphered text.
 
-Time complexity of solver is approximately O(1). It is somewhat dependant on "difficulty" of ciphered text but that complexity cannot be properly described numerically.
+Time complexity of solver is approximately O(1). It is somewhat dependant on "difficulty" of ciphered text but that complexity cannot be described with O-notation.
 
 
 ## Large language models
