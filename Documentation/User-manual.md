@@ -1,6 +1,6 @@
 # User manual
 
-## Setting up
+## Starting up
 1. Download and open folder in terminal
 2. To run program enter command "mvn clean javafx:run"
 3. To generate javadoc enter command "mvn javadoc:javadoc" after which javadoc can be found in folder javadoc.
