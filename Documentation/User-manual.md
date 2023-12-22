@@ -1,6 +1,11 @@
 # User manual
 
 ## Setting up
+1. Download and open folder in terminal
+2. To run program enter command "mvn clean javafx:run"
+3. To generate javadoc enter command "mvn javadoc:javadoc" after which javadoc can be found in folder javadoc.
+4. To run unittests enter command "mvn test"
+
 
 ## Using program
 Textfield "Filename" in lower right takes name of the file as input. Filename should be written as it appears in folder, for example "testfile.txt".
