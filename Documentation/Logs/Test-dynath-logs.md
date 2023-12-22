@@ -1,3 +1,6 @@
+# Dynamic acceptance threshold test logs
+These tests were made as a part of acceptance threshold comparison testing. Discussion for results and reasons for these tests can be found [here](../Test-athcomparison-discussion.md). 
+
 ## Fields
  - Word search count: How many times algorithm performed a dictionary search for a word. (in millions)
 
